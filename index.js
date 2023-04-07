@@ -18,9 +18,11 @@ function updateTime() {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", "");
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `<div class="city" id="los-angeles">
+  citiesElement.innerHTML = `
+  <div class="city">
         <div>
           <h2>${cityTimeZone}</h2>
           <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
